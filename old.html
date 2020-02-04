@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fill a Madlib!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+        body {
+            font-size: 24px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        h1 {
+            align-self: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+        
+        hr {
+            width: 80%;
+            text-decoration: underline;
+            margin: 20px;
+            align-self: center;
+        }
+
+        img {
+            align-self: center;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            margin: 20px;
+        }
+
+        span {
+            display: inline-block;
+            background-color:rgba(000, 000, 000, .1);
+            border-radius: 4px;
+            font-style: italic;
+            font-weight: lighter;
+            margin-left: 2px;
+            margin-right: 2px;
+            min-width: 50px;
+            text-align: center;
+            margin: 5px;
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin-bottom: 30px;
+        }
+
+        form label {
+            margin: 10px;
+            font-size: 1rem;
+            width: 45%;
+            max-width: 450px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        input {
+            font-size: 1rem;
+            width: 50%;
+            max-width: 300px;
+            height: 24px;
+            align-self: center;
+        }
+
+        #clickMe {
+            width: 30%;
+            font-size: 1.25rem;
+            display: block;
+            float: center;
+            margin-top: 30px;
+            margin-left: 35%;
+            margin-right: 35%;
+            margin-bottom: 30px;
+        }
+    </style>
+
+    <img src="images/MadLibs-Logo.png" alt="madlibs logo">
+
+    <!-- Madlib sourced from
+    https://www.wordblanks.com/mad-libs/humor/email-to-my-professor/ -->
+
+    <hr>
+    <h1> Email to my Professor </h1>
+
+    <p>Dear Dr. <span id="lastName">Last Name</span>,</p>
+
+    <p>I cannot make it to the <span id="noun1">noun</span> this time of day . I
+    am very <span id="adjective">adjective</span> and cannot stop <span
+    id="verb1ING">verb (present tense, ending with -ing)</span> my body part . I
+    have a fever of <span id="numDegrees">number of degrees (temp)</span> and
+    the doctor ordered me to stay in <span id="noun2">noun (something you can
+    get into)</span> and <span
+    id="verb2Base">verb (base)</span> lots of
+    <span id="liquid">liquid</span>. Also, can I have a <span
+    id="number">number</span> <span id="periodOfTime">period of time (weeks,
+    days, years, etc.)</span> extension on the essay about <span
+    id="nounPlural1">noun (plural)</span>? My <span id="animal">animal</span>
+    ate it and now I have to start all over!</p>
+
+    <p>Best <span id="nounPlural2">noun (plural)</span>,</p>
+
+    <p><span id="yourName">Your Name</span></p>
+
+    <form>
+        <button type="button" id="clickMe">Click to refresh your madlib!</button>
+        
+        <label>  
+            Last Name: <input type="text" id="lastName_Input" value="">
+        </label>
+
+        <label> 
+            Noun: <input type="text" id="noun1_Input" value="">
+        </label>
+
+        <label>  
+            Adjective: <input type="text" id="adjective_Input" value="">
+        </label>
+
+        <label>  
+            Verb (ending with -ing): <input type="text" id="verb1ING_Input" value="">
+        </label>
+
+        <label>  
+            Number of degrees (temp): <input type="text" id="numDegrees_Input" value="">
+        </label>
+
+        <label>  
+            Noun (something you can get into): <input type="text" id="noun2_Input" value="">
+        </label>
+
+        <label>  
+            Verb (base): <input type="text" id="verb2Base_Input" value="">
+        </label>
+
+        <label>  
+            Liquid: <input type="text" id="liquid_Input" value="">
+        </label>
+
+        <label>  
+            Number: <input type="text" id="number_Input" value="">
+        </label>
+
+        <label>  
+            Period of time (weeks, days, years, etc.): <input type="text" id="periodOfTime_Input" value="">
+        </label>
+
+        <label>  
+            Noun (plural): <input type="text" id="nounPlural1_Input" value="">
+        </label>
+
+        <label>  
+            Animal: <input type="text" id="animal_Input" value="">
+        </label>
+
+        <label>  
+            Noun (plural): <input type="text" id="nounPlural2_Input" value="">
+        </label>
+
+        <label>  
+            Your Name: <input type="text" id="yourName_Input" value="">
+        </label>
+    </form>
+
+
+</body>
+<script>
+    const myButton = document.getElementById("clickMe");
+
+    const lastName = document.getElementById("lastName");
+    const lastName_Input = document.getElementById("lastName_Input");
+
+    const noun1 = document.getElementById("noun1");
+    const noun1_Input = document.getElementById("noun1_Input");
+
+    const adjective = document.getElementById("adjective");
+    const adjective_Input = document.getElementById("adjective_Input");
+
+    const verb1ING = document.getElementById("verb1ING");
+    const verb1ING_Input = document.getElementById("verb1ING_Input");
+
+    const numDegrees = document.getElementById("numDegrees");
+    const numDegrees_Input = document.getElementById("numDegrees_Input");
+
+    const noun2 = document.getElementById("noun2");
+    const noun2_Input = document.getElementById("noun2_Input");
+
+    const verb2Base = document.getElementById("verb2Base");
+    const verb2Base_Input = document.getElementById("verb2Base_Input");
+
+    const liquid = document.getElementById("liquid");
+    const liquid_Input = document.getElementById("liquid_Input");
+
+    const number = document.getElementById("number");
+    const number_Input = document.getElementById("number_Input");
+
+    const periodOfTime = document.getElementById("periodOfTime");
+    const periodOfTime_Input = document.getElementById("periodOfTime_Input");
+    
+    const nounPlural1 = document.getElementById("nounPlural1");
+    const nounPlural1_Input = document.getElementById("nounPlural1_Input");
+
+    const animal = document.getElementById("animal");
+    const animal_Input = document.getElementById("animal_Input");
+
+    const nounPlural2 = document.getElementById("nounPlural2");
+    const nounPlural2_Input = document.getElementById("nounPlural2_Input");
+
+    const yourName = document.getElementById("yourName");
+    const yourName_Input = document.getElementById("yourName_Input");
+
+    myButton.addEventListener("click", function(e){
+        
+        e.preventDefault();
+        console.log("Clicked");
+
+        lastName.innerHTML = lastName_Input.value;
+        noun1.innerHTML = noun1_Input.value;
+        adjective.innerHTML = adjective_Input.value;
+        verb1ING.innerHTML = verb1ING_Input.value;
+        numDegrees.innerHTML = numDegrees_Input.value;
+        noun2.innerHTML = noun2_Input.value;
+        verb2Base.innerHTML = verb2Base_Input.value;
+        liquid.innerHTML = liquid_Input.value;
+        number.innerHTML = number_Input.value;
+        periodOfTime.innerHTML = periodOfTime_Input.value;
+        nounPlural1.innerHTML = nounPlural1_Input.value;
+        lastName.innerHTML = lastName_Input.value;
+        nounPlural2.innerHTML = nounPlural2_Input.value;
+        yourName.innerHTML = yourName_Input.value;
+
+    });
+
+</script>
+</html>
