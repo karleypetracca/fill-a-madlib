@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM Starter Kit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+        body {
+            font-size: 24px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        h1 {
+            align-self: center;
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+        
+        hr {
+            width: 80%;
+            text-decoration: underline;
+            margin: 20px;
+            align-self: center;
+        }
+
+        img {
+            align-self: center;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            margin: 20px;
+        }
+        
+        .madlib {
+            margin: 5% auto;
+            max-width: 900px;
+        }
+
+        p * {
+            margin: 5px;
+        }
+
+        span {
+            display: inline-block;
+            background-color:rgba(000, 000, 000, .1);
+            border-radius: 4px;
+            font-style: italic;
+            font-weight: lighter;
+            margin-left: 2px;
+            margin-right: 2px;
+            min-width: 50px;
+            text-align: center;
+            padding-left: 2px;
+            padding-right: 2px;
+            min-height: 2rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin-bottom: 30px;
+        }
+
+        form label {
+            margin: 10px;
+            width: 45%;
+            max-width: 450px;
+            min-width: 300px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        input {
+            font-size: 1rem;
+            width: 50%;
+            max-width: 300px;
+            height: 24px;
+            align-self: center;
+            min-width: 100px
+        }
+
+        #clickMe {
+            width: 35%;
+            min-width: 300px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            display: block;
+            float: center;
+            margin-top: 30px;
+            margin-left: 35%;
+            margin-right: 35%;
+            margin-bottom: 30px;
+        }
+    </style>
+
+    <img src="images/MadLibs-Logo.png" alt="madlibs logo">
+
+    <!-- Madlib sourced from
+    https://www.wordblanks.com/mad-libs/humor/email-to-my-professor/ -->
+
+    <hr>
+    <div class="madlib">
+        <h1> Email to my Professor </h1>
+        <p>Dear Dr. <span>Last Name</span>,</p>
+        <br>
+        <p>I cannot make it to the <span>noun</span> this time of day . I am
+        very <span>adjective</span> and cannot stop <span>verb (present tense,
+        ending with -ing)</span> my body part . I have a fever of <span>number
+        of degrees (temp)</span> and the doctor ordered me to stay in <span>noun
+        (something you can get into)</span> and <span>verb (base)</span> lots of
+        <span>liquid</span>. Also, can I have a <span>number</span> <span>period
+        of time (weeks, days, years, etc.)</span> extension on the essay about
+        <span>noun (plural)</span>? My <span>animal</span> ate it and now I have
+        to start all over!</p>
+        <br>
+        <p>Best <span>noun (plural)</span>,</p>
+        <br>
+        <p><span>Your Name</span></p>
+
+        <form>
+            <button type="button" id="clickMe">Click to refresh your madlib!</button>
+            
+            <label>  
+                Last Name: <input type="text" value=" ">
+            </label>
+
+            <label> 
+                Noun: <input type="text" value=" ">
+            </label>
+
+            <label>  
+                Adjective: <input type="text" value=" ">
+            </label>
+
+            <label>  
+                Verb (ending with -ing): <input type="text" value=" ">
+            </label>
+
+            <label>  
+                Number of degrees (temp): <input type="text" value=" ">
+            </label>
+
+            <label>  
+                Noun (something you can get into): <input type="text" value=" ">
+            </label>
+
+            <label>  
+                Verb (base): <input type="text" value=" ">
+            </label>
+
+            <label>  
+                Liquid: <input type="text" value=" ">
+            </label>
+
+            <label>  
+                Number: <input type="text" value=" ">
+            </label>
+
+            <label>  
+                Period of time (weeks, days, years, etc.): <input type="text"
+                value=" ">
+            </label>
+
+            <label>  
+                Noun (plural): <input type="text" value=" ">
+            </label>
+
+            <label>  
+                Animal: <input type="text" value=" ">
+            </label>
+
+            <label>  
+                Noun (plural): <input type="text" value=" ">
+            </label>
+
+            <label>  
+                Your Name: <input type="text" value=" ">
+            </label>
+        </form>
+    </div>    
+
+</body>
+<script>
+
+    const myButton = document.getElementById("clickMe");
+    const myInputs = document.getElementsByTagName("input");
+    const myArray = document.getElementsByTagName("span");
+
+    console.log(myInputs);
+    console.log(myArray);
+
+    myButton.addEventListener("click", function(e){
+        
+        e.preventDefault();
+        console.log("Clicked");
+        for (i = 0; i < myInputs.length; i++) {
+            if (myInputs[i].value === " ") {
+                continue;
+            } else {
+                myArray[i].innerHTML = myInputs[i].value;
+            }    
+        }
+    }
+    );
+
+</script>
+</html>
