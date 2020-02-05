@@ -1,0 +1,131 @@
+html {
+    font-size: 24px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-image: url("../images/nathan-dumlao-ewGMqs2tmJI-unsplash.jpg");
+    background-position: bottom;
+    background-size: cover;
+    box-sizing: border-box;
+    width: 1400px;
+    max-width: 100vw;
+    margin: 0 auto;
+}
+
+*, *:above, *:below {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+img {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(255, 255, 255, .8);
+    max-width: 1400px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    text-shadow: rgb(255, 255, 255);
+    padding: 1rem;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: space-around;
+    margin: 20px auto;
+    width: 100%;
+}
+
+.madlib {
+    margin: 0 auto;
+    flex: 1 1 550px;
+    max-width: 550px;
+}
+
+p * {
+    margin: 5px;
+}
+
+span {
+    display: inline-block;
+    background-color:rgba(000, 000, 000, .1);
+    border-radius: 4px;
+    font-style: italic;
+    font-weight: lighter;
+    min-width: 50px;
+    text-align: center;
+    padding-left: 2px;
+    padding-right: 2px;
+    min-height: 1.5rem;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex: 1 1 550px;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+form label {
+    margin: 10px 20px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+input {
+    width: 45%;
+    height: 24px;
+    background-color: rgba(000, 000, 000, .1);
+    font-size: .9rem;
+}
+
+#buttonUpdate {
+    width: 35%;
+    height: 2.5rem;
+    min-width: 300px;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 20px;
+    border-radius: 4px;
+}
+
+#buttonRestart {
+    width: 20%;
+    height: 2.5rem;
+    min-width: 100px;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 20px;
+    border-radius: 4px;
+    color: white;
+    background-color: rgb(175, 51, 51);
+}
+
+footer * {
+    text-align: center;
+    color: rgb(000, 000, 000);
+    align-self: flex-end;
+    justify-self: flex-end;
+}
